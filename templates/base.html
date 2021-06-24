@@ -19,17 +19,14 @@
 
     <nav class="navbar mynav" role="navigation" id="navbar">
         <div class="container">
-            <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Home page</a>
 
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                <li>   <a href="{% url 'posts:create' %}">  Post </a>   </li>
-                <li>   <a href="{% url 'groups:all' %}">  Groups </a>   </li>
-                <li>   <a href="{% url 'groups:create' %}">  Create Group </a>   </li>
                 <li>   <a href="{% url 'accounts:logout' %}">  Log out </a>   </li>
+                <li>  <a href="{% url 'accounts:modify' %}">  Modify Detail  </a> </li>
 
                 {% else %}
-                <li>   <a href="{% url 'groups:all' %}">  Groups </a>   </li>
                 <li>   <a href="{% url 'accounts:login' %}">  Log in </a>   </li>
                 <li>   <a href="{% url 'accounts:signup' %}">  Sign Up </a>   </li>
 
